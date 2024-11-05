@@ -1,16 +1,13 @@
-# silesian_prototype
+# Silesian Prototype
 
-A new Flutter project.
+A Flutter project that recreates a screen for an application dedicated to the Silesian region.
 
-## Getting Started
+## Demo
 
-This project is a starting point for a Flutter application.
+Below is an animation showing the target appearance of the application:
 
-A few resources to get you started if this is your first Flutter project:
+![Demo](./assets/demo.gif)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
