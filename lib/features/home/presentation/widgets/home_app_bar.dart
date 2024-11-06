@@ -19,7 +19,7 @@ class _HomeAppBar extends State<HomeAppBar> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('lib/assets/videos/header_video.mp4')
+    _controller = VideoPlayerController.asset(AppVideos.header)
       ..initialize().then((_) {
         setState(() {});
       });
