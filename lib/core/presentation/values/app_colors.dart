@@ -7,7 +7,7 @@ abstract class AppColors {
   static const mintGreen = Color(0xff0CDCAE);
   static const lavender = Color(0xffAB90E6);
   static const offWhite = Color(0xffFFFDFF);
-  static const lightGray = Color(0xffd9e7f0);
+  static const lightGray = Color(0xffe3ecec);
   static const white = Color(0xffffffff);
   static const darkGray = Color(0xff3E3D41);
 }
