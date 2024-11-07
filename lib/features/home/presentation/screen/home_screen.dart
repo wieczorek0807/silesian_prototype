@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:silesian_prototype/core/presentation/presentatnion/app_silver_header_delegate.dart';
 import 'package:silesian_prototype/features/home/presentation/widgets/home_app_bar.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/recomended_section.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/recommended_header_section.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,7 +16,11 @@ class HomeScreen extends StatelessWidget {
           HomeAppBar(scrollController: scrollController),
           SliverPersistentHeader(
             pinned: true,
-            delegate: RecomendedSection(scrollController: scrollController),
+            delegate: AppSilverHeaderDelegate(
+              minExtent: 130.0,
+              maxExtent: 130.0,
+              child: RecommendedHeaderSection(scrollController: scrollController),
+            ),
           ),
           SliverList(
             delegate: SliverChildListDelegate([

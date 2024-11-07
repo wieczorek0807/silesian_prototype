@@ -18,4 +18,10 @@ abstract class TextStyles {
     fontWeight: FontWeight.w700,
     fontSize: FontSizes.defaultTextButton,
   );
+
+  static const recomendedSectionHeader = TextStyle(
+    fontWeight: FontWeight.w800,
+    color: AppColors.darkGray,
+    fontSize: FontSizes.recomendedSectionHeader,
+  );
 }

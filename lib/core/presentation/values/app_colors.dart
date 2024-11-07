@@ -2,6 +2,7 @@ part of 'values.dart';
 
 abstract class AppColors {
   static const background = darkGray;
+  static const recomendedSectionBackGround = lightGray;
 
   static const deepBlue = Color(0xFF0567B0);
   static const mintGreen = Color(0xff0CDCAE);

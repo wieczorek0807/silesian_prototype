@@ -9,4 +9,6 @@ class FontSizes {
 
   static const double bottomNavigationBar = 12;
   static const double defaultTextButton = 16;
+
+  static const double recomendedSectionHeader = 28;
 }
