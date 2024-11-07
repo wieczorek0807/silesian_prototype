@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:silesian_prototype/core/extensions/build_context_ext.dart';
 import 'package:silesian_prototype/core/presentation/presentatnion/app_text_button.dart';
 import 'package:silesian_prototype/core/presentation/values/values.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/recomended_scroll_button.dart';
 
 class RecomendedSection extends SliverPersistentHeaderDelegate {
   final ScrollController scrollController;
@@ -23,8 +25,8 @@ class RecomendedSection extends SliverPersistentHeaderDelegate {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20),
-              const Text(
-                'Polecane',
+              Text(
+                context.appLocalizations.recommended,
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: AppColors.darkGray),
               ),
               const SizedBox(height: 10),
@@ -32,43 +34,16 @@ class RecomendedSection extends SliverPersistentHeaderDelegate {
                 children: [
                   AppTextButton(
                       onPressed: () {},
-                      text: 'Płatne',
+                      text: context.appLocalizations.paid,
                       textColor: AppColors.white,
                       bgColor: AppColors.lavender),
                   const SizedBox(width: 10),
-                  AppTextButton(onPressed: () {}, text: 'Bezpłatne'),
+                  AppTextButton(onPressed: () {}, text: context.appLocalizations.free),
                 ],
               ),
             ],
           ),
-          Positioned(
-              top: -33,
-              right: 0,
-              child: GestureDetector(
-                onTap: () {
-                  scrollController.animateTo(
-                    0,
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeInOut,
-                  );
-                },
-                child: Container(
-                  width: 65,
-                  height: 65,
-                  decoration: BoxDecoration(
-                    color: AppColors.mintGreen,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Align(
-                    alignment: Alignment(0, 1),
-                    child: Icon(
-                      size: 40,
-                      Icons.keyboard_arrow_down,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              )),
+          RecommendedScrollButton(scrollController: scrollController)
         ],
       ),
     );
