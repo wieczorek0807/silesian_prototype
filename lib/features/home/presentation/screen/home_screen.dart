@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:silesian_prototype/core/presentation/presentatnion/app_silver_header_delegate.dart';
 import 'package:silesian_prototype/features/home/presentation/widgets/home_app_bar.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/recommended_body_section.dart';
 import 'package:silesian_prototype/features/home/presentation/widgets/recommended_header_section.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,15 +23,7 @@ class HomeScreen extends StatelessWidget {
               child: RecommendedHeaderSection(scrollController: scrollController),
             ),
           ),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              Container(
-                height: 800,
-                color: const Color.fromARGB(255, 59, 230, 230),
-                child: const Center(child: Text('Body')),
-              ),
-            ]),
-          ),
+          RecommendedBodySection(),
         ],
       ),
     );

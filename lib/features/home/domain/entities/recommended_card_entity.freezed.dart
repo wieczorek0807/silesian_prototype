@@ -17,11 +17,13 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$RecommendedCardEntity {
   bool get hasBackground => throw _privateConstructorUsedError;
+  bool get isSmaller => throw _privateConstructorUsedError;
   Color get bgColor => throw _privateConstructorUsedError;
-  IconData? get icon => throw _privateConstructorUsedError;
-  String? get text => throw _privateConstructorUsedError;
-  String? get imageUrl => throw _privateConstructorUsedError;
+  Color get textColor => throw _privateConstructorUsedError;
   bool get isFavorite => throw _privateConstructorUsedError;
+  IconData? get icon => throw _privateConstructorUsedError;
+  String get text => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
 
   /// Create a copy of RecommendedCardEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -38,11 +40,13 @@ abstract class $RecommendedCardEntityCopyWith<$Res> {
   @useResult
   $Res call(
       {bool hasBackground,
+      bool isSmaller,
       Color bgColor,
+      Color textColor,
+      bool isFavorite,
       IconData? icon,
-      String? text,
-      String? imageUrl,
-      bool isFavorite});
+      String text,
+      String? imageUrl});
 }
 
 /// @nodoc
@@ -62,37 +66,47 @@ class _$RecommendedCardEntityCopyWithImpl<$Res,
   @override
   $Res call({
     Object? hasBackground = null,
+    Object? isSmaller = null,
     Object? bgColor = null,
-    Object? icon = freezed,
-    Object? text = freezed,
-    Object? imageUrl = freezed,
+    Object? textColor = null,
     Object? isFavorite = null,
+    Object? icon = freezed,
+    Object? text = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
       hasBackground: null == hasBackground
           ? _value.hasBackground
           : hasBackground // ignore: cast_nullable_to_non_nullable
               as bool,
+      isSmaller: null == isSmaller
+          ? _value.isSmaller
+          : isSmaller // ignore: cast_nullable_to_non_nullable
+              as bool,
       bgColor: null == bgColor
           ? _value.bgColor
           : bgColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData?,
-      text: freezed == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imageUrl: freezed == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+      textColor: null == textColor
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color,
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as IconData?,
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -108,11 +122,13 @@ abstract class _$$RecommendedCardEntityImplCopyWith<$Res>
   @useResult
   $Res call(
       {bool hasBackground,
+      bool isSmaller,
       Color bgColor,
+      Color textColor,
+      bool isFavorite,
       IconData? icon,
-      String? text,
-      String? imageUrl,
-      bool isFavorite});
+      String text,
+      String? imageUrl});
 }
 
 /// @nodoc
@@ -130,37 +146,47 @@ class __$$RecommendedCardEntityImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? hasBackground = null,
+    Object? isSmaller = null,
     Object? bgColor = null,
-    Object? icon = freezed,
-    Object? text = freezed,
-    Object? imageUrl = freezed,
+    Object? textColor = null,
     Object? isFavorite = null,
+    Object? icon = freezed,
+    Object? text = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_$RecommendedCardEntityImpl(
       hasBackground: null == hasBackground
           ? _value.hasBackground
           : hasBackground // ignore: cast_nullable_to_non_nullable
               as bool,
+      isSmaller: null == isSmaller
+          ? _value.isSmaller
+          : isSmaller // ignore: cast_nullable_to_non_nullable
+              as bool,
       bgColor: null == bgColor
           ? _value.bgColor
           : bgColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData?,
-      text: freezed == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      imageUrl: freezed == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+      textColor: null == textColor
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color,
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as IconData?,
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -168,32 +194,40 @@ class __$$RecommendedCardEntityImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$RecommendedCardEntityImpl implements _RecommendedCardEntity {
-  const _$RecommendedCardEntityImpl(
+  _$RecommendedCardEntityImpl(
       {required this.hasBackground,
-      this.bgColor = Colors.white,
+      this.isSmaller = false,
+      this.bgColor = AppColors.mintGreen,
+      this.textColor = AppColors.white,
+      this.isFavorite = false,
       this.icon,
-      this.text,
-      this.imageUrl,
-      this.isFavorite = false});
+      required this.text,
+      this.imageUrl});
 
   @override
   final bool hasBackground;
   @override
   @JsonKey()
+  final bool isSmaller;
+  @override
+  @JsonKey()
   final Color bgColor;
   @override
-  final IconData? icon;
-  @override
-  final String? text;
-  @override
-  final String? imageUrl;
+  @JsonKey()
+  final Color textColor;
   @override
   @JsonKey()
   final bool isFavorite;
+  @override
+  final IconData? icon;
+  @override
+  final String text;
+  @override
+  final String? imageUrl;
 
   @override
   String toString() {
-    return 'RecommendedCardEntity(hasBackground: $hasBackground, bgColor: $bgColor, icon: $icon, text: $text, imageUrl: $imageUrl, isFavorite: $isFavorite)';
+    return 'RecommendedCardEntity(hasBackground: $hasBackground, isSmaller: $isSmaller, bgColor: $bgColor, textColor: $textColor, isFavorite: $isFavorite, icon: $icon, text: $text, imageUrl: $imageUrl)';
   }
 
   @override
@@ -203,18 +237,22 @@ class _$RecommendedCardEntityImpl implements _RecommendedCardEntity {
             other is _$RecommendedCardEntityImpl &&
             (identical(other.hasBackground, hasBackground) ||
                 other.hasBackground == hasBackground) &&
+            (identical(other.isSmaller, isSmaller) ||
+                other.isSmaller == isSmaller) &&
             (identical(other.bgColor, bgColor) || other.bgColor == bgColor) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite) &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.imageUrl, imageUrl) ||
-                other.imageUrl == imageUrl) &&
-            (identical(other.isFavorite, isFavorite) ||
-                other.isFavorite == isFavorite));
+                other.imageUrl == imageUrl));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, hasBackground, bgColor, icon, text, imageUrl, isFavorite);
+  int get hashCode => Object.hash(runtimeType, hasBackground, isSmaller,
+      bgColor, textColor, isFavorite, icon, text, imageUrl);
 
   /// Create a copy of RecommendedCardEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -227,26 +265,32 @@ class _$RecommendedCardEntityImpl implements _RecommendedCardEntity {
 }
 
 abstract class _RecommendedCardEntity implements RecommendedCardEntity {
-  const factory _RecommendedCardEntity(
+  factory _RecommendedCardEntity(
       {required final bool hasBackground,
+      final bool isSmaller,
       final Color bgColor,
+      final Color textColor,
+      final bool isFavorite,
       final IconData? icon,
-      final String? text,
-      final String? imageUrl,
-      final bool isFavorite}) = _$RecommendedCardEntityImpl;
+      required final String text,
+      final String? imageUrl}) = _$RecommendedCardEntityImpl;
 
   @override
   bool get hasBackground;
   @override
+  bool get isSmaller;
+  @override
   Color get bgColor;
+  @override
+  Color get textColor;
+  @override
+  bool get isFavorite;
   @override
   IconData? get icon;
   @override
-  String? get text;
+  String get text;
   @override
   String? get imageUrl;
-  @override
-  bool get isFavorite;
 
   /// Create a copy of RecommendedCardEntity
   /// with the given fields replaced by the non-null parameter values.

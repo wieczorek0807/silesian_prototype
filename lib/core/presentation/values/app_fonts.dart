@@ -11,4 +11,6 @@ class FontSizes {
   static const double defaultTextButton = 16;
 
   static const double recomendedSectionHeader = 28;
+
+  static const double recommendedCard = 20;
 }

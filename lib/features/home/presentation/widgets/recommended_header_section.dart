@@ -23,31 +23,33 @@ class RecommendedHeaderSection extends StatelessWidget {
       padding: AppPadding.recomendedSection,
       child: Stack(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 20),
-              Text(
-                context.appLocalizations.recommended,
-                style: TextStyles.recomendedSectionHeader,
-              ),
-              const SizedBox(height: 10),
-              Row(
-                children: [
-                  AppTextButton(
-                    onPressed: () {},
-                    text: context.appLocalizations.paid,
-                    textColor: AppColors.white,
-                    bgColor: AppColors.lavender,
-                  ),
-                  const SizedBox(width: 10),
-                  AppTextButton(
-                    onPressed: () {},
-                    text: context.appLocalizations.free,
-                  ),
-                ],
-              ),
-            ],
+          Padding(
+            padding: AppPadding.recomendedSectionHeader,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  context.appLocalizations.recommended,
+                  style: TextStyles.recomendedSectionHeader,
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  children: [
+                    AppTextButton(
+                      onPressed: () {},
+                      text: context.appLocalizations.paid,
+                      textColor: AppColors.white,
+                      bgColor: AppColors.lavender,
+                    ),
+                    const SizedBox(width: 10),
+                    AppTextButton(
+                      onPressed: () {},
+                      text: context.appLocalizations.free,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
           RecommendedScrollButton(scrollController: scrollController),
         ],
