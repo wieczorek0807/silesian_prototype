@@ -4,8 +4,8 @@ import 'package:silesian_prototype/core/presentation/values/values.dart';
 import 'package:silesian_prototype/features/home/domain/entities/recommended_card_entity.dart';
 import 'package:silesian_prototype/features/home/presentation/widgets/recomended_card.dart';
 
-class RecommendedBodySection extends StatelessWidget {
-  RecommendedBodySection({super.key});
+class RecommendedBody extends StatelessWidget {
+  RecommendedBody({super.key});
 
   final List<RecommendedCardEntity> cardDataList = [
     RecommendedCardEntity(

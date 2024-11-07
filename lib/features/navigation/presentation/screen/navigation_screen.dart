@@ -19,7 +19,7 @@ class NavigationScreen extends StatelessWidget {
         child: Scaffold(
           body: BlocBuilder<NavigationCubit, NavigationState>(
             builder: (context, state) => state.when(
-              silesian: () => const HomeScreen(),
+              silesian: () => HomeScreen(),
               news: () => const NewsScreen(),
               events: () => const EventsScreen(),
               explore: () => const ExploreScreen(),

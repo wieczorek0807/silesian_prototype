@@ -5,11 +5,11 @@ import 'package:silesian_prototype/core/presentation/styles/styles.dart';
 import 'package:silesian_prototype/core/presentation/values/values.dart';
 import 'package:silesian_prototype/features/home/presentation/widgets/recommended_scroll_button.dart';
 
-class RecommendedHeaderSection extends StatelessWidget {
+class RecommendedHeader extends StatelessWidget {
   final ScrollController scrollController;
   final double height;
 
-  const RecommendedHeaderSection({
+  const RecommendedHeader({
     super.key,
     required this.scrollController,
     this.height = 130.0,
