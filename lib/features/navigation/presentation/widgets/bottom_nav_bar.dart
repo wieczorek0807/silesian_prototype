@@ -16,8 +16,8 @@ class BottomNavBar extends StatelessWidget {
         backgroundColor: AppColors.lightGray,
         unselectedItemColor: AppColors.darkGray,
         selectedItemColor: AppColors.darkGray,
-        selectedLabelStyle: TextStyles.navBarSelectedLabelStyle,
-        unselectedLabelStyle: TextStyles.navBarUnselectedLabelStyle,
+        selectedLabelStyle: TextStyles.navBarSelectedLabel,
+        unselectedLabelStyle: TextStyles.navBarUnselectedLabel,
         items: [
           BottomNavigationBarItem(
             icon: const Icon(Icons.home_outlined),

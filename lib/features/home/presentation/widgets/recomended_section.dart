@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:silesian_prototype/core/presentation/presentatnion/app_text_button.dart';
 import 'package:silesian_prototype/core/presentation/values/values.dart';
 
 class RecomendedSection extends SliverPersistentHeaderDelegate {
@@ -29,35 +30,13 @@ class RecomendedSection extends SliverPersistentHeaderDelegate {
               const SizedBox(height: 10),
               Row(
                 children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.lavender,
-                      shadowColor: Colors.transparent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      'Płatne',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
+                  AppTextButton(
+                      onPressed: () {},
+                      text: 'Płatne',
+                      textColor: AppColors.white,
+                      bgColor: AppColors.lavender),
                   const SizedBox(width: 10),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shadowColor: Colors.transparent,
-                      backgroundColor: AppColors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      'Bezpłatne',
-                      style: TextStyle(color: Colors.black87),
-                    ),
-                  ),
+                  AppTextButton(onPressed: () {}, text: 'Bezpłatne'),
                 ],
               ),
             ],
