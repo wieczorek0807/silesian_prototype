@@ -7,23 +7,24 @@ class RecomendedSection extends SliverPersistentHeaderDelegate {
   RecomendedSection({required this.scrollController});
 
   @override
-  double get minExtent => 100.0;
+  double get minExtent => 130.0;
   @override
-  double get maxExtent => 100.0;
+  double get maxExtent => 130.0;
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      color: const Color(0xFFE0EBE8),
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      color: AppColors.lightGray,
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Stack(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 20),
               const Text(
                 'Polecane',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black87),
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: AppColors.darkGray),
               ),
               const SizedBox(height: 10),
               Row(
@@ -31,6 +32,7 @@ class RecomendedSection extends SliverPersistentHeaderDelegate {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.lavender,
+                      shadowColor: Colors.transparent,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -38,12 +40,14 @@ class RecomendedSection extends SliverPersistentHeaderDelegate {
                     onPressed: () {},
                     child: const Text(
                       'Płatne',
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                   const SizedBox(width: 10),
-                  OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                      side: const BorderSide(color: Colors.black87),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shadowColor: Colors.transparent,
+                      backgroundColor: AppColors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -59,9 +63,9 @@ class RecomendedSection extends SliverPersistentHeaderDelegate {
             ],
           ),
           Positioned(
-            top: -33,
-            right: 0,
-            child: GestureDetector(
+              top: -33,
+              right: 0,
+              child: GestureDetector(
                 onTap: () {
                   scrollController.animateTo(
                     0,
@@ -69,22 +73,23 @@ class RecomendedSection extends SliverPersistentHeaderDelegate {
                     curve: Curves.easeInOut,
                   );
                 },
-                child: SizedBox(width: 65, height: 65, child: Placeholder())
-                // ClipPath(
-                //   clipper: HalfCircleClipper(),
-                //   child: Container(
-                //     width: 50,
-                //     height: 50,
-                //     color: Colors.teal,
-                //     child: const Icon(
-                //       Icons.arrow_upward,
-                //       color: Colors.white,
-                //       size: 20,
-                //     ),
-                //   ),
-                // ),
+                child: Container(
+                  width: 65,
+                  height: 65,
+                  decoration: BoxDecoration(
+                    color: AppColors.mintGreen,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Align(
+                    alignment: Alignment(0, 1),
+                    child: Icon(
+                      size: 40,
+                      Icons.keyboard_arrow_down,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-          ),
+              )),
         ],
       ),
     );

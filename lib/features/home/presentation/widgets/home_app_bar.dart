@@ -35,13 +35,11 @@ class _HomeAppBar extends State<HomeAppBar> {
 
   @override
   void dispose() {
-    // Odłączamy nasłuchiwanie scrolla przy zakończeniu widgetu
     widget.scrollController.removeListener(_onScroll);
     _controller.dispose();
     super.dispose();
   }
 
-  // Funkcja, która jest wywoływana podczas przewijania
   void _onScroll() {
     setState(() {
       _appBarHeight = widget.scrollController.offset;
