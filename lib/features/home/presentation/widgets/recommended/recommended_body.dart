@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:silesian_prototype/core/presentation/values/values.dart';
 import 'package:silesian_prototype/features/home/domain/entities/recommended_card_entity.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/recomended_card.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/recommended/recomended_card.dart';
 
 class RecommendedBody extends StatelessWidget {
   RecommendedBody({super.key});

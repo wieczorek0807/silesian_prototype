@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:silesian_prototype/core/presentation/values/values.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/home_app_bar_circular_icon.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/home_app_bar_logo.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/app_bar/home_app_bar_circular_icon.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/app_bar/home_app_bar_logo.dart';
 import 'package:video_player/video_player.dart';
 
 class HomeAppBar extends StatefulWidget {
@@ -21,15 +21,14 @@ class HomeAppBarState extends State<HomeAppBar> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(AppVideos.header)
-      ..initialize().then((_) {
-        setState(() {});
-      });
+    _initializeVideoController();
+  }
+
+  void _initializeVideoController() {
+    _controller = VideoPlayerController.asset(AppVideos.header)..initialize().then((_) => setState(() {}));
     _controller.setLooping(true);
     _controller.setVolume(0.0);
     _controller.play();
-
-    widget.scrollController.addListener(_onScroll);
   }
 
   @override

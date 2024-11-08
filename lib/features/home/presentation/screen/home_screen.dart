@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:silesian_prototype/core/presentation/presentatnion/app_silver_header_delegate.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/home_app_bar.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/app_bar/home_app_bar.dart';
 import 'package:silesian_prototype/features/home/presentation/widgets/home_floating_action_button.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/recommended_body.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/recommended_header.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/recommended/recomended_body_biger.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/recommended/recommended_body.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/recommended/recommended_header.dart';
 
 final ScrollController scrollController = ScrollController();
 final ValueNotifier<bool> isScrollButtonVisible = ValueNotifier(false);
@@ -23,33 +23,34 @@ class HomeScreen extends StatelessWidget {
     scrollController.addListener(_scrollListener);
 
     return Scaffold(
-      body: CustomScrollView(
-        controller: scrollController,
-        slivers: [
-          HomeAppBar(scrollController: scrollController),
-          SliverPersistentHeader(
-            pinned: true,
-            delegate: AppSilverHeaderDelegate(
-              minExtent: 140.0,
-              maxExtent: 140.0,
-              child: RecommendedHeader(scrollController: scrollController),
-            ),
-          ),
-          RecommendedBody(),
-        ],
-      ),
-      floatingActionButton: ValueListenableBuilder<bool>(
-        valueListenable: isScrollButtonVisible,
-        builder: (context, isVisible, child) {
-          return Visibility(
-            visible: isVisible,
-            child: HomeFloatingActionButton(
-              scrollController: scrollController,
-              isScrollButtonVisible: isScrollButtonVisible,
-            ),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          bool isWideScreen = constraints.maxWidth > 600;
+
+          return CustomScrollView(
+            controller: scrollController,
+            slivers: [
+              HomeAppBar(scrollController: scrollController),
+              if (!isWideScreen) ...[
+                RecommendedHeader(scrollController: scrollController),
+                RecommendedBody(),
+              ] else ...[
+                SliverToBoxAdapter(
+                  child: Row(
+                    children: [
+                      SizedBox(width: 200, child: Placeholder()),
+                      SizedBox(width: 16),
+                      Expanded(child: RecomendedBodyBiger()),
+                    ],
+                  ),
+                ),
+              ],
+            ],
           );
         },
       ),
+      floatingActionButton: HomeFloatingActionButton(
+          scrollController: scrollController, isScrollButtonVisible: isScrollButtonVisible),
     );
   }
 }
