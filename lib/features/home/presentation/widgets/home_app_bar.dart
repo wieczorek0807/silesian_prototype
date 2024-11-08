@@ -11,10 +11,10 @@ class HomeAppBar extends StatefulWidget {
   const HomeAppBar({super.key, required this.scrollController});
 
   @override
-  _HomeAppBar createState() => _HomeAppBar();
+  HomeAppBarState createState() => HomeAppBarState();
 }
 
-class _HomeAppBar extends State<HomeAppBar> {
+class HomeAppBarState extends State<HomeAppBar> {
   late VideoPlayerController _controller;
   double _appBarHeight = 0.0;
 
@@ -29,7 +29,6 @@ class _HomeAppBar extends State<HomeAppBar> {
     _controller.setVolume(0.0);
     _controller.play();
 
-    // Nasłuchiwanie przewijania ScrollController
     widget.scrollController.addListener(_onScroll);
   }
 
@@ -49,6 +48,7 @@ class _HomeAppBar extends State<HomeAppBar> {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      surfaceTintColor: Colors.transparent,
       systemOverlayStyle: SystemUiOverlayStyle.light,
       expandedHeight: MediaQuery.of(context).size.height / 2,
       floating: false,

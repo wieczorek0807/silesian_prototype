@@ -7,7 +7,7 @@ import 'package:silesian_prototype/features/home/presentation/widgets/recomended
 class RecommendedBody extends StatelessWidget {
   RecommendedBody({super.key});
 
-  final List<RecommendedCardEntity> cardDataList = [
+  List<RecommendedCardEntity> cardDataList = [
     RecommendedCardEntity(
       isSmaller: true,
       hasBackground: true,
@@ -87,7 +87,9 @@ class RecommendedBody extends StatelessWidget {
           itemBuilder: (context, index) {
             return RecomendedCard(
               recommendedCardEntity: cardDataList[index],
-              onFavoriteToggle: () {},
+              onFavoriteToggle: () {
+                cardDataList[index] = cardDataList[index].copyWith(isFavorite: true);
+              },
             );
           },
         ),

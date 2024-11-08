@@ -12,7 +12,7 @@ class RecommendedHeader extends StatelessWidget {
   const RecommendedHeader({
     super.key,
     required this.scrollController,
-    this.height = 130.0,
+    this.height = 140.0,
   });
 
   @override
