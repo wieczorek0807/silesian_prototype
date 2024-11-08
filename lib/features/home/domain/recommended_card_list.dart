@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:silesian_prototype/core/presentation/values/values.dart';
 import 'package:silesian_prototype/features/home/domain/entities/recommended_card_entity.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/recommended/recomended_card.dart';
 
-class RecomendedBodyBiger extends StatelessWidget {
-  RecomendedBodyBiger({super.key});
-
-  List<RecommendedCardEntity> cardDataList = [
+abstract class RecommendedCardList {
+  static final List<RecommendedCardEntity> cardDataList = [
     RecommendedCardEntity(
       isSmaller: true,
       hasBackground: true,
@@ -66,31 +62,4 @@ class RecomendedBodyBiger extends StatelessWidget {
       isFavorite: false,
     ),
   ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: AppColors.lightGray,
-      padding: AppPadding.recomendedSection,
-      height: 200,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: cardDataList.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: SizedBox(
-              width: 150,
-              child: RecomendedCard(
-                recommendedCardEntity: cardDataList[index],
-                onFavoriteToggle: () {
-                  cardDataList[index] = cardDataList[index].copyWith(isFavorite: true);
-                },
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
 }

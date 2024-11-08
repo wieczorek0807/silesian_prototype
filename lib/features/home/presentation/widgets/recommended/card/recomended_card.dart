@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:silesian_prototype/features/home/domain/entities/recommended_card_entity.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/recommended/background_card.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/recommended/image_card.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/recommended/card/background_card.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/recommended/card/image_card.dart';
 
 class RecomendedCard extends StatelessWidget {
   final RecommendedCardEntity recommendedCardEntity;

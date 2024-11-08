@@ -29,6 +29,7 @@ class HomeAppBarState extends State<HomeAppBar> {
     _controller.setLooping(true);
     _controller.setVolume(0.0);
     _controller.play();
+    widget.scrollController.addListener(_onScroll);
   }
 
   @override

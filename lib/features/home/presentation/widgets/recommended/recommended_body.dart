@@ -2,70 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:silesian_prototype/core/presentation/values/values.dart';
 import 'package:silesian_prototype/features/home/domain/entities/recommended_card_entity.dart';
-import 'package:silesian_prototype/features/home/presentation/widgets/recommended/recomended_card.dart';
+import 'package:silesian_prototype/features/home/presentation/widgets/recommended/card/recomended_card.dart';
 
 class RecommendedBody extends StatelessWidget {
-  RecommendedBody({super.key});
-
-  List<RecommendedCardEntity> cardDataList = [
-    RecommendedCardEntity(
-      isSmaller: true,
-      hasBackground: true,
-      bgColor: AppColors.mintGreen,
-      textColor: AppColors.darkGray,
-      icon: Icons.moving,
-      text: 'Zaplanuj podróż',
-    ),
-    RecommendedCardEntity(
-      hasBackground: false,
-      imageUrl: AppImages.museum,
-      text: 'Dłuższe godziny zwiedzania Muzeum',
-      isFavorite: false,
-    ),
-    RecommendedCardEntity(
-      hasBackground: true,
-      bgColor: AppColors.deepBlue,
-      icon: Icons.backpack_outlined,
-      text: 'Szlaki',
-      isFavorite: false,
-    ),
-    RecommendedCardEntity(
-      hasBackground: false,
-      imageUrl: AppImages.carboneum,
-      text: 'Carbonerum dla licealistów',
-      isFavorite: false,
-    ),
-    RecommendedCardEntity(
-      hasBackground: false,
-      imageUrl: AppImages.planetarium,
-      text: 'Dłuższe godziny zwiedzania Muzeum',
-      isFavorite: false,
-    ),
-    RecommendedCardEntity(
-      hasBackground: false,
-      imageUrl: AppImages.stadium,
-      text: 'Carbonerum dla licealistów',
-      isFavorite: false,
-    ),
-    RecommendedCardEntity(
-      hasBackground: false,
-      imageUrl: AppImages.elephant,
-      text: 'Dłuższe godziny zwiedzania Muzeum',
-      isFavorite: false,
-    ),
-    RecommendedCardEntity(
-      hasBackground: false,
-      imageUrl: AppImages.lights,
-      text: 'Dłuższe godziny zwiedzania Muzeum',
-      isFavorite: false,
-    ),
-    RecommendedCardEntity(
-      hasBackground: false,
-      imageUrl: AppImages.opera,
-      text: 'Dłuższe godziny zwiedzania Muzeum',
-      isFavorite: false,
-    ),
-  ];
+  const RecommendedBody({super.key, required this.recomendedCards});
+  final List<RecommendedCardEntity> recomendedCards;
 
   @override
   Widget build(BuildContext context) {
@@ -83,13 +24,11 @@ class RecommendedBody extends StatelessWidget {
           crossAxisSpacing: 8,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: cardDataList.length,
+          itemCount: recomendedCards.length,
           itemBuilder: (context, index) {
             return RecomendedCard(
-              recommendedCardEntity: cardDataList[index],
-              onFavoriteToggle: () {
-                cardDataList[index] = cardDataList[index].copyWith(isFavorite: true);
-              },
+              recommendedCardEntity: recomendedCards[index],
+              onFavoriteToggle: () {},
             );
           },
         ),

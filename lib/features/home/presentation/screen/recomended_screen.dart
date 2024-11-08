@@ -6,7 +6,7 @@ class RecomendedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      return Placeholder();
+      return const Placeholder();
     });
   }
 }
