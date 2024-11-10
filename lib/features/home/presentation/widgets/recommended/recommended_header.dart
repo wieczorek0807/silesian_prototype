@@ -13,7 +13,7 @@ class RecommendedHeader extends StatelessWidget {
   const RecommendedHeader({
     super.key,
     required this.scrollController,
-    this.height = 140.0,
+    this.height = 110.0,
   });
 
   @override
@@ -21,8 +21,8 @@ class RecommendedHeader extends StatelessWidget {
     return SliverPersistentHeader(
       pinned: true,
       delegate: AppSilverHeaderDelegate(
-        minExtent: 140.0,
-        maxExtent: 140.0,
+        minExtent: height,
+        maxExtent: height,
         child: Container(
           height: height,
           color: AppColors.recomendedSectionBackGround,
@@ -33,12 +33,12 @@ class RecommendedHeader extends StatelessWidget {
                 padding: AppPadding.recomendedSectionHeader,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                   children: [
                     Text(
                       context.appLocalizations.recommended,
                       style: TextStyles.recomendedSectionHeader,
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: AppDimensions.defaultSpace),
                     Row(
                       children: [
                         AppTextButton(
@@ -47,7 +47,7 @@ class RecommendedHeader extends StatelessWidget {
                           textColor: AppColors.white,
                           bgColor: AppColors.lavender,
                         ),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: AppDimensions.defaultSpace),
                         AppTextButton(
                           onPressed: () {},
                           text: context.appLocalizations.free,

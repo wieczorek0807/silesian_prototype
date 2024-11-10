@@ -35,7 +35,7 @@ abstract class RecommendedCardList {
       hasBackground: false,
       imageUrl: AppImages.planetarium,
       text: 'Dłuższe godziny zwiedzania Muzeum',
-      isFavorite: false,
+      isFavorite: true,
     ),
     RecommendedCardEntity(
       hasBackground: false,
@@ -53,7 +53,7 @@ abstract class RecommendedCardList {
       hasBackground: false,
       imageUrl: AppImages.lights,
       text: 'Dłuższe godziny zwiedzania Muzeum',
-      isFavorite: false,
+      isFavorite: true,
     ),
     RecommendedCardEntity(
       hasBackground: false,

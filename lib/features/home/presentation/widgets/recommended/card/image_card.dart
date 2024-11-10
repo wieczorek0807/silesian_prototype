@@ -17,14 +17,17 @@ class ImageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: AppPadding.recomendedCard,
-      child: ClipRRect(
-        borderRadius: AppBorder.recomendedCard,
-        child: Stack(
-          children: [
-            _backgroundImage(),
-            _favoriteButton(),
-            _textOverlay(),
-          ],
+      child: GestureDetector(
+        onTap: () {},
+        child: ClipRRect(
+          borderRadius: AppBorder.recomendedCard,
+          child: Stack(
+            children: [
+              _backgroundImage(),
+              _favoriteButton(),
+              _textOverlay(),
+            ],
+          ),
         ),
       ),
     );
@@ -49,7 +52,7 @@ class ImageCard extends StatelessWidget {
         decoration: AppBoxDecoration.recomendedImageCardIcon,
         child: IconButton(
           icon: Icon(
-            Icons.favorite_outline,
+            recommendedCardEntity.isFavorite ? Icons.favorite : Icons.favorite_outline,
             color: recommendedCardEntity.isFavorite ? AppColors.mintGreen : Colors.white,
           ),
           onPressed: onFavoriteToggle,

@@ -8,8 +8,10 @@ class HomeAppBarLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final logo =
+        appBarHeight > MediaQuery.of(context).size.height / 4 ? AppImages.logoColor : AppImages.logoWhite;
     return Image.asset(
-      appBarHeight > 100 ? AppImages.logoColor : AppImages.logoWhite,
+      logo,
       fit: BoxFit.contain,
       height: AppDimensions.homeAppBarLogoHeight,
     );

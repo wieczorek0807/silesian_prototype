@@ -19,14 +19,17 @@ class BackgroundCard extends StatelessWidget {
       padding: AppPadding.recomendedCard,
       child: ClipRRect(
         borderRadius: AppBorder.recomendedCard,
-        child: Container(
-          color: recommendedCardEntity.bgColor,
-          child: Stack(
-            children: [
-              _arrowIcon(),
-              _icon(),
-              _text(),
-            ],
+        child: GestureDetector(
+          onTap: (){} ,
+          child: Container(
+            color: recommendedCardEntity.bgColor,
+            child: Stack(
+              children: [
+                _arrowIcon(),
+                _icon(),
+                _text(),
+              ],
+            ),
           ),
         ),
       ),

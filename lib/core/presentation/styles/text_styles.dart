@@ -20,7 +20,6 @@ abstract class TextStyles {
   );
 
   static const recomendedSectionHeader = TextStyle(
-    
     fontWeight: FontWeight.w800,
     color: AppColors.darkGray,
     fontSize: FontSizes.recomendedSectionHeader,
@@ -29,6 +28,6 @@ abstract class TextStyles {
   static const recomendedCard = TextStyle(
     color: AppColors.offWhite,
     fontSize: FontSizes.recommendedCard,
-    fontWeight: FontWeight.w900,
+    fontWeight: FontWeight.w700,
   );
 }

@@ -16,7 +16,7 @@ class HomeAppBar extends StatefulWidget {
 
 class HomeAppBarState extends State<HomeAppBar> {
   late VideoPlayerController _controller;
-  double _appBarHeight = 0.0;
+  double _appBarHeight = 0;
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class HomeAppBarState extends State<HomeAppBar> {
   void _initializeVideoController() {
     _controller = VideoPlayerController.asset(AppVideos.header)..initialize().then((_) => setState(() {}));
     _controller.setLooping(true);
-    _controller.setVolume(0.0);
+    _controller.setVolume(0);
     _controller.play();
     widget.scrollController.addListener(_onScroll);
   }

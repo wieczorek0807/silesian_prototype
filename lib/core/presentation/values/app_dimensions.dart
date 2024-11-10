@@ -5,6 +5,7 @@ abstract class AppDimensions {
   static const double homeAppBarLeadingWidth = 70;
   static const double homeAppBarLogoHeight = 40;
   static const double homeAppBarCircularIcon = 40;
+  static const double defaultSpace = 10;
 
   static const double recommendedScrollButtonSize = 65;
   static const double recommendedScrollButtonIconSize = 40;
@@ -13,4 +14,5 @@ abstract class AppDimensions {
   static const double recomendedBodyLowHeight = 200;
 
   static const double recomendedCardIconSize = 38;
+  static const double recommendedHeaderLowHeightWidth = 180;
 }

@@ -8,6 +8,12 @@ class RecommendedBody extends StatelessWidget {
   const RecommendedBody({super.key, required this.recomendedCards});
   final List<RecommendedCardEntity> recomendedCards;
 
+  int _getCrossAxisCount(double screenWidth) {
+    if (screenWidth > 1000) return 4;
+    if (screenWidth > 600) return 3;
+    return 2;
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -20,8 +26,8 @@ class RecommendedBody extends StatelessWidget {
         padding: AppPadding.recomendedSection,
         child: MasonryGridView.count(
           crossAxisCount: crossAxisCount,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
+          mainAxisSpacing: AppDimensions.defaultSpace,
+          crossAxisSpacing: AppDimensions.defaultSpace,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemCount: recomendedCards.length,
@@ -34,11 +40,5 @@ class RecommendedBody extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  int _getCrossAxisCount(double screenWidth) {
-    if (screenWidth > 1000) return 4;
-    if (screenWidth > 600) return 3;
-    return 2;
   }
 }
