@@ -5,6 +5,8 @@ windows/
 web/
 android/
 ios/
+macos/
+linux/
 # Miscellaneous
 *.class
 *.log
